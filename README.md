@@ -13,5 +13,5 @@ chmod +x /usr/local/bin/DNSBuster.sh
 ``` 
 
 ### Contributers
-@me
+@me  
 @Cosm1c
