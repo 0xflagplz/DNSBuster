@@ -30,7 +30,7 @@ sudo apt install seclists > /dev/null 2>&1
 sudo apt install assetfinder > /dev/null 2>&1
 sudo apt install massdns > /dev/null 2>&1
 sudo apt install amass > /dev/null 2>&1
-sudo apt install httpx > /dev/null 2>&1
+sudo apt install httpx-toolkit > /dev/null 2>&1
 sudo apt install nuclei > /dev/null 2>&1
 
 
@@ -64,15 +64,15 @@ amass enum -active -df $domainsfilelocation -nf known_subdomains.txt -w /usr/sha
 echo ""
 echo "Amass has finished."
 mkdir lists
-while read -r IP;do grep -P "(\h|,)$IP(,|$)" amass_all_domains;done < $scopefile >> in-scope-results.txt
+while read -r IP;do grep -P "(\h|,)$IP(,|$)" amass_all_domains;done < ../$scopefile >> in-scope-results.txt
 cat in-scope-results.txt | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' >> lists/results-ipv4.txt
-awk -F ']' '{ print $2 }' in-scope-results.txt | sed -r 's/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\b'/" "/  | awk '{ gsub(/ /,""); print }' >> lists../results-hostnames.txt
+awk -F ']' '{ print $2 }' in-scope-results.txt | sed -r 's/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\b'/" "/  | awk '{ gsub(/ /,""); print }' >> lists/results-hostnames.txt
 mv known_subdomains.txt lists/known_subdomains.txt
 echo "Amass IPs/Hostnames can be found in $folder/lists"
 echo ""
-echo "httpx is running."
-httpx -follow-redirects -o httpx.out -l lists/results-ipv4.txt -mc 200,201,301,302 -ports 22,443,8000,8006,8081,8085,8189,8199,25055
-echo "httpx has finished."
+echo "httpx-toolkit is running."
+httpx-toolkit -follow-redirects -o httpx.out -l lists/results-ipv4.txt -mc 200,201,301,302 -ports 22,443,8000,8006,8081,8085,8189,8199,25055
+echo "httpx-toolkitcd ../ has finished."
 echo ""
 echo "Nuclei is running."
 nuclei -l httpx.out -o nuclei.out timeout 15 -project $PWD -h
