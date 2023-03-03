@@ -6,8 +6,8 @@ Usage: DNSBuster.sh [-d <DomainFileLocation>] [-s <ScopeFileLocation>]
 ```
 
 ### Execute Anywhere
-1. Create A Scripts Folder  
-     **Can be named anything, mine is ".scripts" in my home directory**   
-2. Add DNSBuster.sh to your scripts folder**  
-3. Add to this line to your .bashrc   
-```export PATH=$PATH:~/.scripts``` 
+```
+sudo mv DNSBuster.sh /usr/local/bin
+chmod +x /usr/local/bin/DNSBuster.sh
+``` 
+
