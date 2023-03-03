@@ -1,6 +1,7 @@
 # DNSBuster
 Bash Script to Automate DNS OSINT while remaining in scope
 
+**The Domain/Scope File Inputs Need to be in the SAME directory**
 ```
 Usage: DNSBuster.sh [-d <DomainFileLocation>] [-s <ScopeFileLocation>]
 ```
