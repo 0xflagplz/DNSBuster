@@ -1,4 +1,15 @@
 #!/bin/bash
+#!/bin/bash
+
+echo " ___    ____   _____ ____   __ __  _____ ______    ___  ____  "
+echo "|   \  |    \ / ___/|    \ |  |  |/ ___/|      |  /  _]|    \ "
+echo "|    \ |  _  (   \_ |  o  )|  |  (   \_ |      | /  [_ |  D  )"
+echo "|  D  ||  |  |\__  ||     ||  |  |\__  ||_|  |_||    _]|    / "
+echo "|     ||  |  |/  \ ||  O  ||  :  |/  \ |  |  |  |   [_ |    \ "
+echo "|     ||  |  |\    ||     ||     |\    |  |  |  |     ||  .  \\"
+echo "|_____||__|__| \___||_____| \__,_| \___|  |__|  |_____||__|\_|"
+echo "                                        @AchocolatechipPancake"
+echo "                                     Special Thanks - @Cosm1c "
 
 unset -v domainsfile
 unset -v scopefile
