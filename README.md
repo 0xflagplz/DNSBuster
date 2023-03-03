@@ -12,3 +12,5 @@ sudo mv DNSBuster.sh /usr/local/bin
 chmod +x /usr/local/bin/DNSBuster.sh
 ``` 
 
+### Contributers
+@Cosm1c
