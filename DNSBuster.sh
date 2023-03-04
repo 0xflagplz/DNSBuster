@@ -113,10 +113,10 @@ mv known_subdomains.txt lists/known_subdomains.txt
 echo "Amass IPs/Hostnames can be found in $folder/lists"
 echo ""
 echo "httpx-toolkit is running."
-httpx-toolkit -follow-redirects -o httpx.out -l lists/results-ipv4.txt -mc 200,201,301,302 -ports 22,443,8000,8006,8081,8085,8189,8199,25055 >> /dev/null 2>&1
+httpx-toolkit -follow-redirects -l lists/results-ipv4.txt -mc 200,201,301,302 -ports 22,443,8000,8006,8081,8085,8189,8199,25055 >> httpx.out
 echo "httpx-toolkitcd ../ has finished."
 echo ""
 echo "Nuclei is running."
-nuclei -l httpx.out -o nuclei.out timeout 15 -project $PWD >> /dev/null 2>&1
+nuclei -l httpx.out timeout 15 -project $PWD >> nuclei.out
 echo "Nuclei has finished."
 echo "All OSINT Scans have been completed."
