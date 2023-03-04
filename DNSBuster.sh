@@ -108,7 +108,7 @@ echo "Amass has finished."
 mkdir lists
 while read -r IP;do grep -P "(\h|,)$IP(,|$)" amass_all_domains;done < ../$scopefile >> in-scope-results.txt
 cat in-scope-results.txt | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' >> lists/results-ipv4.txt
-awk -F ']' '{ print $2 }' in-scope-results.txt | sed -r 's/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\b'/" "/  | awk '{ gsub(/ /,""); print }' | awk -F'[, ]' '{print $1}' >> lists/results-hostnames.txt
+awk -F ']' '{ print $2 }' in-scope-results.txt | sed -r 's/(\b[0-9]{1,3}\.){3}[0-9]{1,3}\b'/" "/  | awk '{ gsub(/ /,""); print }' | awk -F'[,]' '{print $1}' >> lists/results-hostnames.txt
 mv known_subdomains.txt lists/known_subdomains.txt
 echo "Amass IPs/Hostnames can be found in $folder/lists"
 echo ""
