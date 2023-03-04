@@ -8,7 +8,8 @@ echo "|     ||  |  |/  \ ||  O  ||  :  |/  \ |  |  |  |   [_ |    \ "
 echo "|     ||  |  |\    ||     ||     |\    |  |  |  |     ||  .  \\"
 echo "|_____||__|__| \___||_____| \__,_| \___|  |__|  |_____||__|\_|"
 echo "                                        @AchocolatechipPancake"
-echo "                                     Special Thanks - @Cosm1c "
+echo "                                        @Cosm1c               "
+echo ""
 
 unset -v domainsfile
 unset -v scopefile
